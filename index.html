@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Afzal | Portfolio</title>
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +20,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -29,47 +33,50 @@
     </nav>
 
     <section id="home" class="hero">
-        <div class="tech-grid"></div>
-        <div class="code-lines">
-            <span>&lt;div&gt;</span>
-            <span>&lt;body&gt;</span>
-            <span>&lt;h1&gt;</span>
-            <span>&lt;code&gt;</span>
-            <span>&lt;/&gt;</span>
+        <div class="hero-bg" aria-hidden="true">
+            <span class="hero-orb orb-a"></span>
+            <span class="hero-orb orb-b"></span>
+            <span class="hero-orb orb-c"></span>
+            <span class="hero-grid"></span>
         </div>
-        <div class="tech-icons">
-            <span class="tech-icon"><i class="fab fa-python"></i></span>
-            <span class="tech-icon"><i class="fab fa-js"></i></span>
-            <span class="tech-icon"><i class="fab fa-react"></i></span>
-            <span class="tech-icon"><i class="fab fa-node-js"></i></span>
-            <span class="tech-icon"><i class="fas fa-database"></i></span>
-            <span class="tech-icon"><i class="fab fa-git-alt"></i></span>
-        </div>
-        <div class="typing-effect">
-            <span class="typed-text"></span><span class="cursor">|</span>
-        </div>
-        <div class="container">
+        <div class="container hero-layout">
             <div class="hero-content">
-                <span class="hero-greeting">Hello, I'm</span>
+                <div class="hero-status"><span class="status-dot"></span> Open to Work </div>
+                <p class="hero-kicker">Computer Science Graduate</p>
                 <h1 class="hero-name">Mohamed <span>Afzal</span></h1>
-                <p class="hero-description">Computer Science student passionate about building smart and efficient applications. Combining development, machine learning, and data skills with knowledge of SQL, MS Office, and operational tools. Eager to create impactful solutions and grow.</p>
+                <p class="hero-role">Aspiring Software Developer</p>
+                <p class="hero-tagline"><span class="typed-text"></span><span class="cursor">|</span></p>
+                <p class="hero-description">I build real-world projects in web development, machine learning, and data. Looking for an entry-level role where I can contribute, learn fast, and deliver clean, user-focused solutions.</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
-                    <a href="#contact" class="btn btn-secondary">Let's Talk</a>
-                    <a href="Afzal_Resume.pdf" download class="btn btn-secondary">Resume <i class="fas fa-download"></i></a>
+                    <a href="#contact" class="btn btn-primary"> Connect <i class="fas fa-arrow-right"></i></a>
+                    <a href="Afzal_Resume.pdf" download class="btn btn-secondary">Download Resume <i class="fas fa-download"></i></a>
+                    <a href="#projects" class="btn btn-ghost">View Projects</a>
+                </div>
+                <div class="hero-metrics">
+                    <div class="metric"><strong>4+</strong><span>Projects Built</span></div>
+                    <div class="metric"><strong>4</strong><span>Live Demos</span></div>
+                    <div class="metric"><strong>3</strong><span>Core Domains</span></div>
                 </div>
                 <div class="social-links">
                     <a href="https://github.com/Afzal174" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/mohamed-afzal-7ba942314" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/godric_afzal?igsh=M2VjcHBvMnQ4bG90" target="_blank" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:mohamedafzal1744@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
-                
             </div>
             <div class="hero-visual">
-                <div class="profile-card">
-                    <div class="profile-avatar">
-                        <i class="fas fa-code"></i>
+                <div class="hero-creative" aria-hidden="true">
+                    <div class="orbit-ring ring-1"></div>
+                    <div class="orbit-ring ring-2"></div>
+                    <div class="orbit-core">
+                        <span>&lt;/&gt;</span>
+                        <small>Open to Work</small>
                     </div>
+                    <span class="float-chip chip-1"><i class="fab fa-python"></i> Python</span>
+                    <span class="float-chip chip-2"><i class="fab fa-react"></i> React</span>
+                    <span class="float-chip chip-3"><i class="fas fa-database"></i> SQL</span>
+                    <span class="float-chip chip-4"><i class="fas fa-brain"></i> ML</span>
+                    <span class="float-chip chip-5"><i class="fab fa-js"></i> JavaScript</span>
+                    <span class="float-chip chip-6"><i class="fas fa-rocket"></i> Entry-Level</span>
                 </div>
             </div>
         </div>
@@ -78,7 +85,7 @@
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">Get to know the person behind the code</p>
+            <p class="section-subtitle">Recent graduate ready to learn, build, and contribute</p>
             <div class="about-content">
                 <div class="about-image reveal">
                     <div class="about-img">
@@ -86,9 +93,47 @@
                     </div>
                 </div>
                 <div class="about-text reveal">
-                    <p>I am a Computer Science student passionate about technology and innovation, with a strong interest in web development, machine learning, and data-driven solutions. Skilled in SQL, MS Office, and operational tools.</p>
-                    <p>I focus on efficient data management and building responsive, user-friendly applications with clean code and strong performance. I am continuously learning and improving to stay updated with modern technologies and take on new challenges.</p>
+                    <p>I'm a Computer Science graduate actively looking for an entry-level role in software development. I enjoy turning ideas into working products and have built projects across web development, machine learning, and data-driven applications.</p>
+                    <p>I bring a strong foundation in Python, JavaScript, SQL, and modern web technologies, along with a problem-solving mindset and willingness to learn quickly. I'm eager to join a team where I can contribute, grow, and deliver real value.</p>
+                    <ul class="about-points">
+                        <li><i class="fas fa-check-circle"></i> Open to Software Developer / Web Developer / ML entry-level roles</li>
+                        <li><i class="fas fa-check-circle"></i> Hands-on project experience with live demos and source code</li>
+                        <li><i class="fas fa-check-circle"></i> Strong fundamentals, quick learner, and team-oriented</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <p class="section-subtitle">Technologies and tools I work with</p>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <div class="skill-tags">
+                        <span>Python</span><span>JavaScript</span><span>SQL</span><span>HTML5</span><span>CSS3</span>
                     </div>
+                </div>
+                <div class="skill-card reveal">
+                    <h3><i class="fas fa-layer-group"></i> Web Development</h3>
+                    <div class="skill-tags">
+                        <span>React.js</span><span>Node.js</span><span>REST APIs</span><span>Responsive Design</span><span>Flask</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <h3><i class="fas fa-brain"></i> ML & Data</h3>
+                    <div class="skill-tags">
+                        <span>Machine Learning</span><span>NLP</span><span>Streamlit</span><span>Data Analysis</span><span>Google Colab</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <div class="skill-tags">
+                        <span>Git & GitHub</span><span>MS Office</span><span>VS Code</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -96,19 +141,14 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Some of my recent work</p>
+            <p class="section-subtitle">Real-world projects with live demos and source code</p>
             <div class="projects-grid">
                 <div class="project-card reveal">
-                    <div class="project-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>SentiBot - Mental Health Chatbot</h3>
-                    <p>Developed an AI-powered chatbot using Python and LLaMA (Groq API) for real-me conversational support. Implemented emotion classification and crisis detection for intelligent response handling. Integrated automated alert system (Email & SMS) for emergency situations. Enabled voice interaction features to improve accessibility and user engagement. Enhanced user experience with emotion-aware responses and wellness support tools.</p>
+                    <div class="project-icon"><i class="fas fa-robot"></i></div>
+                    <h3>SentiBot â€“ Mental Health Chatbot</h3>
+                    <p>AI-powered chatbot built with Python and LLaMA (Groq API) featuring emotion detection, crisis alerts (Email/SMS), and voice interaction for accessible mental health support.</p>
                     <div class="project-tech">
-                        <span>Python</span>
-                        <span>NLP</span>
-                        <span>LLaMA</span>
-                        <span>Flask</span>
+                        <span>Python</span><span>NLP</span><span>LLaMA</span><span>Flask</span>
                     </div>
                     <div class="project-links">
                         <a href="https://senti-bot-ai-powered-sentiment-analysis.onrender.com" target="_blank" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
@@ -116,16 +156,11 @@
                     </div>
                 </div>
                 <div class="project-card reveal">
-                    <div class="project-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3>Disease Prediction</h3>
-                    <p>Developed a machine learning application using Streamlit for real-time disease prediction. Implemented supervised learning algorithms with data preprocessing for accurate results. Enabled users to upload medical datasets and receive instant predictions (e.g., diabetes, heart disease). Designed an intuitive and user-friendly interface for improved usability. Enhanced decision-making with real-time prediction and data-driven insights.</p>
+                    <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Disease Prediction App</h3>
+                    <p>Streamlit-based ML application that preprocesses medical data and delivers real-time predictions (e.g., diabetes, heart disease) through a clean, user-friendly interface.</p>
                     <div class="project-tech">
-                        <span>Python</span>
-                        <span>Streamlit</span>
-                        <span>Machine Learning</span>
-                        <span>Google Colab</span>
+                        <span>Python</span><span>Streamlit</span><span>Machine Learning</span><span>Google Colab</span>
                     </div>
                     <div class="project-links">
                         <a href="https://disease-prediction-afzal3anjnqo6if5e5fjonyz4vw.streamlit.app/" target="_blank" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
@@ -133,15 +168,11 @@
                     </div>
                 </div>
                 <div class="project-card reveal">
-                    <div class="project-icon">
-                        <i class="fas fa-clipboard-list"></i>
-                    </div>
+                    <div class="project-icon"><i class="fas fa-clipboard-list"></i></div>
                     <h3>Civic Issue Reporting & Tracking</h3>
-                    <p>Developed a civic issue reporting and tracking system for real-time monitoring. Built a responsive frontend using React.js for seamless user experience. Designed intuitive UI components to improve usability and issue submission. Integrated REST APIs for efficient data handling and communication. Implemented status tracking workflows to enhance transparency. Collaborated with team members to deliver features on time using clean coding practices.</p>
+                    <p>Responsive React.js platform for reporting and tracking civic issues in real time, with REST API integration and status workflows to improve transparency and usability.</p>
                     <div class="project-tech">
-                        <span>MERN Stack</span>
-                        <span>React.js</span>
-                        <span>REST APIs</span>
+                        <span>MERN Stack</span><span>React.js</span><span>REST APIs</span>
                     </div>
                     <div class="project-links">
                         <a href="https://clean-street1.vercel.app/" target="_blank" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
@@ -149,15 +180,11 @@
                     </div>
                 </div>
                 <div class="project-card reveal">
-                    <div class="project-icon">
-                        <i class="fas fa-hotel"></i>
-                    </div>
+                    <div class="project-icon"><i class="fas fa-hotel"></i></div>
                     <h3>Hotel Reservation Management System</h3>
-                    <p>Developed "ACJ Hotels," a responsive hotel booking web application with interactive UI components. Implemented responsive web design to ensure seamless performance across devices. Designed clean layouts and intuitive navigation to enhance user experience. Improved usability through structured UI design and accessibility practices.</p>
+                    <p>Responsive hotel booking web app ("ACJ Hotels") with intuitive UI, structured layouts, and cross-device compatibility to deliver a smooth reservation experience.</p>
                     <div class="project-tech">
-                        <span>Full Stack</span>
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
+                        <span>HTML/CSS</span><span>JavaScript</span><span>Responsive UI</span>
                     </div>
                     <div class="project-links">
                         <a href="https://acjhotel.netlify.app/" target="_blank" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
@@ -170,15 +197,19 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Let's create something amazing together</p>
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">I'm open to entry-level opportunities, interviews, and collaborations</p>
             <div class="contact-content">
                 <div class="contact-info reveal">
+                    <div class="contact-cta-box">
+                        <h3>Ready to contribute from day one</h3>
+                        <p>If you're hiring for an entry-level developer role, I'd love to discuss how I can add value to your team.</p>
+                    </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>mohamedafzal1744@gmail.com</p>
+                            <p><a href="mailto:mohamedafzal1744@gmail.com">mohamedafzal1744@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -189,10 +220,10 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-globe"></i>
+                        <i class="fab fa-linkedin"></i>
                         <div>
-                            <h3>Website</h3>
-                            <p>afzalweb.online</p>
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://www.linkedin.com/in/mohamed-afzal-7ba942314" target="_blank">linkedin.com/in/mohamed-afzal-7ba942314</a></p>
                         </div>
                     </div>
                 </div>
@@ -229,3 +260,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
