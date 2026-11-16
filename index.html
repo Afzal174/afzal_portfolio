@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mohamed Afzal — Computer Science graduate and aspiring software developer. Web development, machine learning and data projects.">
     <title>Mohamed Afzal | Portfolio</title>
     <link rel="stylesheet" href="variables.css">
     <link rel="stylesheet" href="base.css">
@@ -14,21 +15,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo"></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+            <a href="#home" class=aria-label="Mohamed Afzal"></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -41,16 +42,16 @@
         </div>
         <div class="container hero-layout">
             <div class="hero-content">
-                <div class="hero-status"><span class="status-dot"></span> Open to Work </div>
+                <div class="hero-status"><span class="status-dot"></span> Open to Work</div>
                 <p class="hero-kicker">Computer Science Graduate</p>
                 <h1 class="hero-name">Mohamed <span>Afzal</span></h1>
                 <p class="hero-role">Aspiring Software Developer</p>
                 <p class="hero-tagline"><span class="typed-text"></span><span class="cursor">|</span></p>
                 <p class="hero-description">I build real-world projects in web development, machine learning, and data. Looking for an entry-level role where I can contribute, learn fast, and deliver clean, user-focused solutions.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary"> Connect <i class="fas fa-arrow-right"></i></a>
-                    <a href="Afzal_Resume.pdf" download class="btn btn-secondary">Download Resume <i class="fas fa-download"></i></a>
-                    <a href="#projects" class="btn btn-ghost">View Projects</a>
+                    <a href="#projects" class="btn btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me <i class="fas fa-paper-plane"></i></a>
+                    <a href="Afzal_Resume.pdf" download class="btn btn-ghost">Download Resume <i class="fas fa-download"></i></a>
                 </div>
                 <div class="hero-metrics">
                     <div class="metric"><strong>4+</strong><span>Projects Built</span></div>
@@ -58,9 +59,9 @@
                     <div class="metric"><strong>3</strong><span>Core Domains</span></div>
                 </div>
                 <div class="social-links">
-                    <a href="https://github.com/Afzal174" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/mohamed-afzal-7ba942314" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:mohamedafzal1744@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/Afzal174" target="_blank" rel="noopener" class="social-icon" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-afzal-7ba942314" target="_blank" rel="noopener" class="social-icon" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:mohamedafzal1744@gmail.com" class="social-icon" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -84,15 +85,17 @@
 
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">Recent graduate ready to learn, build, and contribute</p>
+            <div class="section-head reveal">
+                <h2 class="section-title">About <span class="accent">Me</span></h2>
+                <p class="section-subtitle">Recent graduate ready to learn, build, and contribute</p>
+            </div>
             <div class="about-content">
-                <div class="about-image reveal">
+                <div class="about-image reveal-left">
                     <div class="about-img">
-                        <img src="Afal.jpeg" alt="Mohamed Afzal">
+                        <img src="Afal.jpeg" alt="Mohamed Afzal" loading="lazy">
                     </div>
                 </div>
-                <div class="about-text reveal">
+                <div class="about-text reveal-right">
                     <p>I'm a Computer Science graduate actively looking for an entry-level role in software development. I enjoy turning ideas into working products and have built projects across web development, machine learning, and data-driven applications.</p>
                     <p>I bring a strong foundation in Python, JavaScript, SQL, and modern web technologies, along with a problem-solving mindset and willingness to learn quickly. I'm eager to join a team where I can contribute, grow, and deliver real value.</p>
                     <ul class="about-points">
@@ -107,31 +110,33 @@
 
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <p class="section-subtitle">Technologies and tools I work with</p>
+            <div class="section-head reveal">
+                <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+                <p class="section-subtitle">Technologies and tools I work with</p>
+            </div>
             <div class="skills-grid">
                 <div class="skill-card reveal">
-                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <h3><span class="skill-icon"><i class="fas fa-code"></i></span> Programming</h3>
                     <div class="skill-tags">
                         <span>Python</span><span>JavaScript</span><span>SQL</span><span>HTML5</span><span>CSS3</span>
                     </div>
                 </div>
                 <div class="skill-card reveal">
-                    <h3><i class="fas fa-layer-group"></i> Web Development</h3>
+                    <h3><span class="skill-icon"><i class="fas fa-layer-group"></i></span> Web Development</h3>
                     <div class="skill-tags">
                         <span>React.js</span><span>Node.js</span><span>REST APIs</span><span>Responsive Design</span><span>Flask</span>
                     </div>
                 </div>
                 <div class="skill-card reveal">
-                    <h3><i class="fas fa-brain"></i> ML & Data</h3>
+                    <h3><span class="skill-icon"><i class="fas fa-brain"></i></span> ML &amp; Data</h3>
                     <div class="skill-tags">
                         <span>Machine Learning</span><span>NLP</span><span>Streamlit</span><span>Data Analysis</span><span>Google Colab</span>
                     </div>
                 </div>
                 <div class="skill-card reveal">
-                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <h3><span class="skill-icon"><i class="fas fa-tools"></i></span> Tools</h3>
                     <div class="skill-tags">
-                        <span>Git & GitHub</span><span>MS Office</span><span>VS Code</span>
+                        <span>Git &amp; GitHub</span><span>MS Office</span><span>VS Code</span>
                     </div>
                 </div>
             </div>
@@ -140,105 +145,129 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Real-world projects with live demos and source code</p>
+            <div class="section-head reveal">
+                <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+                <p class="section-subtitle">Real-world projects with live demos and source code</p>
+            </div>
             <div class="projects-grid">
-                <div class="project-card reveal">
-                    <div class="project-icon"><i class="fas fa-robot"></i></div>
-                    <h3>SentiBot - AI Mental Health Chatbot</h3>
-                    <p>AI-powered chatbot built with Python and LLaMA (Groq API) featuring emotion detection, crisis alerts (Email/SMS), and voice interaction for accessible mental health support.</p>
-                    <div class="project-tech">
-                        <span>Python</span><span>NLP</span><span>LLaMA</span><span>Flask</span>
+                <article class="project-card reveal">
+                    <div class="project-media" aria-hidden="true">
+                        <div class="project-icon"><i class="fas fa-robot"></i></div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://senti-bot-ai-powered-sentiment-analysis.onrender.com" target="_blank" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                        <a href="https://github.com/Afzal174/Senti-Bot-AI-Powered-Sentiment-Analysis-Chatbot" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                    <div class="project-body">
+                        <h3>SentiBot - AI Mental Health Chatbot</h3>
+                        <p>AI-powered chatbot built with Python and LLaMA (Groq API) featuring emotion detection, crisis alerts (Email/SMS), and voice interaction for accessible mental health support.</p>
+                        <div class="project-tech">
+                            <span>Python</span><span>NLP</span><span>LLaMA</span><span>Flask</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://senti-bot-ai-powered-sentiment-analysis.onrender.com" target="_blank" rel="noopener" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Afzal174/Senti-Bot-AI-Powered-Sentiment-Analysis-Chatbot" target="_blank" rel="noopener" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
-                    <h3>Disease Prediction App</h3>
-                    <p>Streamlit-based ML application that preprocesses medical data and delivers real-time predictions (e.g., diabetes, heart disease) through a clean, user-friendly interface.</p>
-                    <div class="project-tech">
-                        <span>Python</span><span>Streamlit</span><span>Machine Learning</span><span>Google Colab</span>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-media" aria-hidden="true">
+                        <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://disease-prediction-afzal3anjnqo6if5e5fjonyz4vw.streamlit.app/" target="_blank" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                        <a href="https://github.com/Afzal174/Disease-Prediction" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                    <div class="project-body">
+                        <h3>Disease Prediction App</h3>
+                        <p>Streamlit-based ML application that preprocesses medical data and delivers real-time predictions (e.g., diabetes, heart disease) through a clean, user-friendly interface.</p>
+                        <div class="project-tech">
+                            <span>Python</span><span>Streamlit</span><span>Machine Learning</span><span>Google Colab</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://disease-prediction-afzal3anjnqo6if5e5fjonyz4vw.streamlit.app/" target="_blank" rel="noopener" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Afzal174/Disease-Prediction" target="_blank" rel="noopener" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-icon"><i class="fas fa-clipboard-list"></i></div>
-                    <h3>Civic Issue Reporting & Tracking</h3>
-                    <p>Responsive React.js platform for reporting and tracking civic issues in real time, with REST API integration and status workflows to improve transparency and usability.</p>
-                    <div class="project-tech">
-                        <span>MERN Stack</span><span>React.js</span><span>REST APIs</span>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-media" aria-hidden="true">
+                        <div class="project-icon"><i class="fas fa-clipboard-list"></i></div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://clean-street1.vercel.app/" target="_blank" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                        <a href="https://github.com/Afzal174/Clean-Street1" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                    <div class="project-body">
+                        <h3>Civic Issue Reporting &amp; Tracking</h3>
+                        <p>Responsive React.js platform for reporting and tracking civic issues in real time, with REST API integration and status workflows to improve transparency and usability.</p>
+                        <div class="project-tech">
+                            <span>MERN Stack</span><span>React.js</span><span>REST APIs</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://clean-street1.vercel.app/" target="_blank" rel="noopener" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Afzal174/Clean-Street1" target="_blank" rel="noopener" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-icon"><i class="fas fa-hotel"></i></div>
-                    <h3>Hotel Reservation Management System</h3>
-                    <p>Responsive hotel booking web app ("ACJ Hotels") with intuitive UI, structured layouts, and cross-device compatibility to deliver a smooth reservation experience.</p>
-                    <div class="project-tech">
-                        <span>HTML/CSS</span><span>JavaScript</span><span>Responsive UI</span>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-media" aria-hidden="true">
+                        <div class="project-icon"><i class="fas fa-hotel"></i></div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://acjhotel.netlify.app/" target="_blank" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                        <a href="https://github.com/Afzal174/Hotel-Reservation-Management-System" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                    <div class="project-body">
+                        <h3>Hotel Reservation Management System</h3>
+                        <p>Responsive hotel booking web app ("ACJ Hotels") with intuitive UI, structured layouts, and cross-device compatibility to deliver a smooth reservation experience.</p>
+                        <div class="project-tech">
+                            <span>HTML/CSS</span><span>JavaScript</span><span>Responsive UI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://acjhotel.netlify.app/" target="_blank" rel="noopener" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Afzal174/Hotel-Reservation-Management-System" target="_blank" rel="noopener" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                        </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">I'm open to entry-level opportunities, interviews, and collaborations</p>
+            <div class="section-head reveal">
+                <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+                <p class="section-subtitle">I'm open to entry-level opportunities, interviews, and collaborations</p>
+            </div>
             <div class="contact-content">
-                <div class="contact-info reveal">
+                <div class="contact-info reveal-left">
                     <div class="contact-cta-box">
                         <h3>Ready to contribute from day one</h3>
                         <p>If you're hiring for an entry-level developer role, I'd love to discuss how I can add value to your team.</p>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope contact-icon"></i>
                         <div>
                             <h3>Email</h3>
                             <p><a href="mailto:mohamedafzal1744@gmail.com">mohamedafzal1744@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
                         <div>
                             <h3>Location</h3>
                             <p>Chennai, India</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-linkedin contact-icon"></i>
                         <div>
                             <h3>LinkedIn</h3>
-                            <p><a href="https://www.linkedin.com/in/mohamed-afzal-7ba942314" target="_blank">linkedin.com/in/mohamed-afzal-7ba942314</a></p>
+                            <p><a href="https://www.linkedin.com/in/mohamed-afzal-7ba942314" target="_blank" rel="noopener">linkedin.com/in/mohamed-afzal-7ba942314</a></p>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form reveal" action="https://formspree.io/f/xzdydeok" method="POST">
+                <form class="contact-form reveal-right" action="https://formspree.io/f/xzdydeok" method="POST">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+                        <label for="name" class="sr-only">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
+                        <label for="email" class="sr-only">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="subject" placeholder="Subject" required>
+                        <label for="subject" class="sr-only">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <label for="message" class="sr-only">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
                 </form>
@@ -250,9 +279,9 @@
         <div class="container">
             <p>&copy; 2026 Mohamed Afzal. All rights reserved.</p>
             <div class="footer-social">
-                <a href="https://github.com/Afzal174" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mohamed-afzal-7ba942314" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/godric_afzal?igsh=M2VjcHBvMnQ4bG90" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/Afzal174" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mohamed-afzal-7ba942314" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/godric_afzal?igsh=M2VjcHBvMnQ4bG90" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>
@@ -260,4 +289,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

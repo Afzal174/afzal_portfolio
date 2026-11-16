@@ -1,33 +1,54 @@
+/* ============================================================
+   Portfolio Design System — Premium Midnight Navy
+   Palette per spec
+   ============================================================ */
 :root {
-    --primary: #3b82f6;
-    --primary-light: #60a5fa;
-    --primary-dark: #2563eb;
-    --secondary: #22d3ee;
-    --accent: #0ea5e9;
-    --accent-2: #38bdf8;
-    --dark: #060b18;
-    --dark-2: #0b1224;
-    --dark-3: #111b33;
-    --surface: rgba(255, 255, 255, 0.04);
-    --surface-strong: rgba(255, 255, 255, 0.08);
-    --light: #f8fbff;
-    --light-2: #eef6ff;
-    --white: #ffffff;
-    --text: #0f172a;
-    --text-muted: #475569;
-    --text-on-dark: #e6edf7;
-    --text-on-dark-muted: #94a3b8;
-    --border: rgba(148, 163, 184, 0.18);
+    /* Backgrounds */
+    --bg: #080B18;
+    --bg-secondary: #0D1224;
+    --card: #141B30;
+    --card-elevated: #19233B;
+
+    /* Accents */
+    --accent: #6366F1;
+    --accent-2: #2563EB;
+    --cyan: #22D3EE;
+
+    /* Text */
+    --text: #F8FAFC;
+    --text-secondary: #94A3B8;
+
+    /* Borders */
+    --border: rgba(148, 163, 184, 0.15);
     --border-strong: rgba(148, 163, 184, 0.28);
-    --gradient-1: linear-gradient(135deg, #2563eb 0%, #22d3ee 100%);
-    --gradient-2: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
-    --gradient-3: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
-    --gradient-4: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
-    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.14);
-    --glow: 0 0 40px rgba(59, 130, 246, 0.35);
-    --glow-cyan: 0 0 40px rgba(34, 211, 238, 0.25);
+
+    /* Gradients */
+    --gradient: linear-gradient(135deg, #6366F1 0%, #2563EB 50%, #22D3EE 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(34, 211, 238, 0.12) 100%);
+    --gradient-text: linear-gradient(135deg, #818CF8 0%, #2563EB 45%, #22D3EE 100%);
+
+    /* Shadows & glows */
+    --shadow-sm: 0 4px 14px rgba(2, 6, 23, 0.35);
+    --shadow: 0 12px 32px rgba(2, 6, 23, 0.45);
+    --shadow-lg: 0 28px 70px rgba(2, 6, 23, 0.55);
+    --glow: 0 0 40px rgba(99, 102, 241, 0.35);
+    --glow-cyan: 0 0 40px rgba(34, 211, 238, 0.22);
+
+    /* Radii */
     --radius-sm: 12px;
-    --radius-md: 20px;
-    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-lg: 26px;
+    --radius-pill: 999px;
+
+    /* Layout */
+    --container: 1180px;
+    --section-pad: clamp(4.5rem, 8vw, 7rem);
+    --gutter: clamp(1.15rem, 4vw, 2rem);
+
+    /* Motion */
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --transition: 0.28s var(--ease);
+
+    /* Nav */
+    --nav-height: 74px;
 }
