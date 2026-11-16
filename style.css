@@ -196,6 +196,84 @@
     -webkit-mask-image: radial-gradient(ellipse at center, #000 15%, transparent 78%);
     mask-image: radial-gradient(ellipse at center, #000 15%, transparent 78%);
     opacity: 0.5;
+    animation: gridMove 20s linear infinite;
+}
+
+/* Ambient code stream — skills rendered as slowly drifting code */
+.hero-stream {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: clamp(1rem, 4vw, 3rem);
+    padding-inline: 1.5%;
+    overflow: hidden;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+}
+
+.stream-col {
+    flex: 1;
+    max-width: 170px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.72rem;
+    line-height: 2.4;
+    color: rgba(129, 140, 248, 0.17);
+    text-align: center;
+    white-space: nowrap;
+    animation: streamScroll var(--speed, 46s) linear infinite;
+    will-change: transform;
+}
+
+.stream-col:nth-child(even) {
+    color: rgba(34, 211, 238, 0.13);
+}
+
+.stream-col.reverse {
+    animation-direction: reverse;
+}
+
+.stream-1 { --speed: 52s; }
+.stream-2 { --speed: 64s; }
+.stream-3 { --speed: 44s; }
+.stream-4 { --speed: 58s; }
+.stream-5 { --speed: 70s; }
+.stream-6 { --speed: 48s; }
+
+.stream-group {
+    display: block;
+}
+
+@keyframes streamScroll {
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+/* Cinematic spotlight sweep */
+.hero-spotlight {
+    position: absolute;
+    top: -25%;
+    bottom: -25%;
+    left: -55%;
+    width: 42%;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(100deg, transparent 0%, rgba(99, 102, 241, 0.07) 45%, rgba(34, 211, 238, 0.06) 58%, transparent 100%);
+    transform: skewX(-16deg);
+    animation: spotSweep 24s ease-in-out infinite;
+}
+
+@keyframes spotSweep {
+    0%,
+    100% {
+        transform: translateX(0) skewX(-16deg);
+    }
+    50% {
+        transform: translateX(260%) skewX(-16deg);
+    }
 }
 
 .hero-layout {
@@ -254,10 +332,22 @@
 }
 
 .hero-name span {
-    background: var(--gradient-text);
+    background: linear-gradient(135deg, #818cf8 0%, #2563eb 35%, #22d3ee 65%, #818cf8 100%);
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: gradientShift 7s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .hero-role {
@@ -363,7 +453,7 @@
     box-shadow: var(--glow);
 }
 
-/* Hero visual — orbit */
+/* Hero visual — interactive skill constellation */
 .hero-visual {
     display: flex;
     align-items: center;
@@ -371,45 +461,67 @@
     width: 100%;
     min-width: 0;
     padding: clamp(0.25rem, 2vw, 1rem);
+    perspective: 1000px;
 }
 
-.hero-creative {
+.constellation {
     position: relative;
-    width: min(380px, 100%);
+    width: min(430px, 100%);
     aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transform-style: preserve-3d;
+    transition: transform 0.18s ease-out;
 }
 
-.orbit-ring {
+.constellation-rotor {
     position: absolute;
-    border-radius: 50%;
-    border: 1px dashed rgba(148, 163, 184, 0.22);
+    inset: 0;
+    animation: spin 90s linear infinite;
 }
 
-.ring-1 {
-    width: 70%;
-    height: 70%;
-    animation: spin 30s linear infinite;
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
-.ring-2 {
-    width: 94%;
-    height: 94%;
-    border-style: solid;
-    border-color: rgba(99, 102, 241, 0.16);
-    animation: spin 46s linear infinite reverse;
+@keyframes spinReverse {
+    to { transform: rotate(-360deg); }
 }
 
-.orbit-core {
-    width: 150px;
-    height: 150px;
+.constellation-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.constellation-network {
+    fill: none;
+    stroke: rgba(148, 163, 184, 0.14);
+    stroke-width: 0.35;
+}
+
+.constellation-spokes line {
+    stroke: rgba(99, 102, 241, 0.22);
+    stroke-width: 0.3;
+}
+
+.constellation-hub {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.hub-content {
+    animation: spinReverse 90s linear infinite;
+    width: 118px;
+    height: 118px;
     border-radius: 50%;
     background: linear-gradient(145deg, rgba(99, 102, 241, 0.4), rgba(34, 211, 238, 0.22));
     border: 1px solid rgba(148, 163, 184, 0.25);
     box-shadow:
-        0 0 0 12px rgba(99, 102, 241, 0.08),
+        0 0 0 10px rgba(99, 102, 241, 0.08),
         0 22px 55px rgba(2, 6, 23, 0.55),
         var(--glow);
     display: flex;
@@ -417,66 +529,112 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    z-index: 2;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
-.orbit-core span {
+.hub-content span {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     font-weight: 800;
     color: #fff;
     line-height: 1;
 }
 
-.orbit-core small {
+.hub-content small {
     color: #86efac;
-    font-size: 0.68rem;
+    font-size: 0.6rem;
     font-weight: 600;
-    margin-top: 0.4rem;
+    margin-top: 0.35rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
 
-.float-chip {
+.node {
     position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: transform 0.25s var(--ease);
+}
+
+.node:hover {
+    transform: translate(-50%, -50%) scale(1.14);
+    z-index: 3;
+}
+
+.node-inner {
+    animation: spinReverse 90s linear infinite;
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
-    padding: 0.5rem 0.85rem;
-    border-radius: var(--radius-pill);
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
     background: rgba(13, 18, 36, 0.85);
     border: 1px solid var(--border-strong);
-    color: var(--text);
-    font-size: 0.85rem;
-    font-weight: 600;
-    white-space: nowrap;
-    z-index: 3;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: var(--shadow);
-    animation: floatChip 5s ease-in-out infinite;
-}
-
-.float-chip i {
     color: var(--cyan);
+    font-size: 1.05rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
-.chip-1 { top: 1%; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
-.chip-2 { top: 25%; right: 1%; animation-delay: 0.8s; }
-.chip-3 { bottom: 23%; right: 1%; animation-delay: 1.6s; }
-.chip-4 { bottom: 1%; left: 50%; transform: translateX(-50%); animation-delay: 2.4s; }
-.chip-5 { bottom: 23%; left: 1%; animation-delay: 3.2s; }
-.chip-6 { top: 25%; left: 1%; animation-delay: 4s; }
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
+.node:hover .node-inner {
+    border-color: rgba(99, 102, 241, 0.6);
+    background: rgba(99, 102, 241, 0.18);
+    box-shadow: var(--glow);
 }
 
-@keyframes floatChip {
-    0%, 100% { translate: 0 0; }
-    50% { translate: 0 -8px; }
+.node-inner em {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.02em;
+}
+
+/* Click ripple (JS-spawned) */
+.click-ripple {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    margin-top: -12px;
+    border-radius: 50%;
+    border: 2px solid rgba(99, 102, 241, 0.65);
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.28), rgba(34, 211, 238, 0.08) 60%, transparent 70%);
+    z-index: 2;
+    pointer-events: none;
+    animation: rippleExpand 0.95s ease-out forwards;
+}
+
+@keyframes rippleExpand {
+    from {
+        transform: scale(0.3);
+        opacity: 1;
+    }
+    to {
+        transform: scale(16);
+        opacity: 0;
+    }
+}
+
+/* Mouse-follow glow (JS sets --mx/--my) */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(340px circle at var(--mx, 72%) var(--my, 28%), rgba(99, 102, 241, 0.1), transparent 65%);
 }
 
 /* ============================================================
@@ -1175,45 +1333,52 @@
 }
 
 @media (max-width: 520px) {
-    .hero-creative {
-        width: min(300px, 100%);
+    .constellation {
+        width: min(340px, 100%);
     }
 
-    .ring-2 {
-        width: 88%;
-        height: 88%;
+    .node-inner {
+        width: 44px;
+        height: 44px;
+        font-size: 0.9rem;
     }
 
-    .orbit-core {
-        width: 112px;
-        height: 112px;
+    .node-inner em {
+        font-size: 0.62rem;
     }
 
-    .orbit-core span {
-        font-size: 1.5rem;
+    .hub-content {
+        width: 96px;
+        height: 96px;
     }
 
-    .orbit-core small {
-        font-size: 0.6rem;
+    .hub-content span {
+        font-size: 1.4rem;
     }
 
-    .float-chip {
-        font-size: 0.74rem;
-        padding: 0.38rem 0.6rem;
+    .hub-content small {
+        font-size: 0.52rem;
     }
-
-    .chip-1 { top: 0; }
-    .chip-4 { bottom: 0; }
-
-    .chip-2,
-    .chip-3 { right: 0; }
-
-    .chip-5,
-    .chip-6 { left: 0; }
+}
+/* Hero code stream — responsive tuning */
+@media (max-width: 980px) {
+    .stream-5,
+    .stream-6 {
+        display: none;
+    }
 }
 
-@media (max-width: 400px) {
-    .float-chip:nth-child(n + 6) {
+@media (max-width: 640px) {
+    .stream-4 {
+        display: none;
+    }
+
+    .stream-col {
+        font-size: 0.62rem;
+        line-height: 2.2;
+    }
+
+    .hero-spotlight {
         display: none;
     }
 }

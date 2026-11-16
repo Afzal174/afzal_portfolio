@@ -39,6 +39,46 @@ document.addEventListener('DOMContentLoaded', function () {
         typedText.textContent = 'Web Developer';
     }
 
+    /* ---------- Hero: mouse-follow glow + constellation tilt + click ripple ---------- */
+    const heroEl = document.querySelector('.hero');
+    const finePointer = window.matchMedia('(pointer: fine)').matches;
+
+    if (finePointer && !prefersReducedMotion && heroEl) {
+        heroEl.addEventListener('pointermove', (e) => {
+            const r = heroEl.getBoundingClientRect();
+            heroEl.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+            heroEl.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        }, { passive: true });
+    }
+
+    const visual = document.querySelector('.hero-visual');
+    const constellation = document.getElementById('constellation');
+
+    if (finePointer && !prefersReducedMotion && visual && constellation) {
+        visual.addEventListener('pointermove', (e) => {
+            const r = visual.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width - 0.5;
+            const y = (e.clientY - r.top) / r.height - 0.5;
+            constellation.style.transform = 'rotateX(' + (-y * 6).toFixed(2) + 'deg) rotateY(' + (x * 8).toFixed(2) + 'deg)';
+        }, { passive: true });
+
+        visual.addEventListener('pointerleave', () => {
+            constellation.style.transform = '';
+        });
+    }
+
+    if (!prefersReducedMotion && heroEl) {
+        heroEl.addEventListener('click', (e) => {
+            const r = heroEl.getBoundingClientRect();
+            const ripple = document.createElement('span');
+            ripple.className = 'click-ripple';
+            ripple.style.left = (e.clientX - r.left) + 'px';
+            ripple.style.top = (e.clientY - r.top) + 'px';
+            heroEl.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 1000);
+        });
+    }
+
     /* ---------- Mobile menu ---------- */
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
